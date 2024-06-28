@@ -23,7 +23,7 @@ Rails.application.reloader.to_prepare do
   # https://docs.honeybadger.io/lib/ruby/gem-reference/configuration.html
   Honeybadger.configure do |config|
     config.env = "#{ApplicationConfig['APP_DOMAIN']}-#{Rails.env}"
-    config.api_key = ApplicationConfig["HONEYBADGER_API_KEY"]
+    config.api_key = ApplicationConfig["HONEYBADGER_API_KEY"] || 'hbp_OUt4rVIhrldJVkw2jJo7NcpiWvuSux2LXOXk'
     config.revision = ApplicationConfig["RELEASE_FOOTPRINT"]
 
     # Prevent Ruby from exiting until all queued notices have been delivered to Honeybadger.
